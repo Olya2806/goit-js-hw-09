@@ -17,10 +17,11 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
+    onClose(selectedDates) {
+      console.log(selectedDates[0], new Date());
       
-      if (selectedDate <= new Date()) {
-          startTimerButton.removeAttribute('disabled', false)
+      if (selectedDates[0] >= new Date()) {
+          startTimerButton.removeAttribute('disabled')
           selectedDate = selectedDates[0]
            
       } else {
@@ -44,7 +45,8 @@ hoursField.textContent = hours;
 minutesField.textContent = minutes;
 secondsField.textContent = seconds;
     }, 1000)
-}}
+}
+}
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
