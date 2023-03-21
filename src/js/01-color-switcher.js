@@ -10,7 +10,7 @@ startButton.addEventListener('click', () => {
    body.style.backgroundColor =  getRandomHexColor()
   }, 1000);
     stopButton.removeAttribute('disabled'); 
-    startButton.setAttribute('disabled', false);
+    startButton.setAttribute('disabled', true);
     
 });
 
@@ -22,7 +22,7 @@ function onStopButtonClick() {
     clearInterval(changeColorTimer);
   
     startButton.removeAttribute('disabled');
-    stopButton.setAttribute('disabled', false); 
+    stopButton.setAttribute('disabled', true); 
 }
 
 
