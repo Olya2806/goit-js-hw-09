@@ -5,8 +5,10 @@ const body = document.querySelector('body');
 stopButton.addEventListener('click', onStopButtonClick);
 stopButton.setAttribute('disabled', false);
 
+let changeColorTimerId;
+
 startButton.addEventListener('click', () => {
-  changeColorTimer = setInterval(() => {
+  changeColorTimerId = setInterval(() => {
    body.style.backgroundColor =  getRandomHexColor()
   }, 1000);
     stopButton.removeAttribute('disabled', false); 
@@ -19,10 +21,11 @@ function getRandomHexColor() {
 }
 
 function onStopButtonClick() {
-    clearInterval(changeColorTimer);
+    clearInterval(changeColorTimerId);
   
     startButton.removeAttribute('disabled', true);
     stopButton.setAttribute('disabled', false); 
+    
 }
 
 
