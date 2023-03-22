@@ -45,7 +45,7 @@ const coutTimeTimer = {
       minutesField.textContent = minutes;
       secondsField.textContent = seconds;
 
-      if (countedTime === 000000) {
+      if (countedTime === '0') {
         clearInterval(myInterval);
       }
       console.log(countedTime);
