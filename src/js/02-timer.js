@@ -48,6 +48,7 @@ const coutTimeTimer = {
       if (countedTime = null) {
         clearInterval();
       }
+      console.log(countedTime);
     }, 1000);
   },
 };
