@@ -35,7 +35,7 @@ startTimerButton.addEventListener('click', () => coutTimeTimer.onStart());
 
 const coutTimeTimer = {
   onStart() {
-    setInterval(() => {
+    let myInterval = setInterval(() => {
       const currentTime = Date.now();
       const countedTime = selectedDate - currentTime;
       const { days, hours, minutes, seconds } = convertMs(countedTime);
@@ -46,7 +46,7 @@ const coutTimeTimer = {
       secondsField.textContent = seconds;
 
       if (days === '00' & hours === "00" & minutes === '00' & seconds === "00") {
-        window.clearInterval();
+        clearInterval(myInterval);
       }
       console.log(countedTime);
     }, 1000);
