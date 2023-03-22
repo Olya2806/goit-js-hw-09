@@ -39,15 +39,17 @@ const coutTimeTimer = {
       const currentTime = Date.now();
       const countedTime = selectedDate - currentTime;
       const { days, hours, minutes, seconds } = convertMs(countedTime);
+      
+      if (countedTime <= 0) {
+        clearInterval(myInterval);
+        return;
+      }
 
       daysField.textContent = days;
       hoursField.textContent = hours;
       minutesField.textContent = minutes;
       secondsField.textContent = seconds;
 
-      if (countedTime === '0') {
-        clearInterval(myInterval);
-      }
       console.log(countedTime);
     }, 1000);
   },
