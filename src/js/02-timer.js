@@ -45,7 +45,7 @@ const coutTimeTimer = {
       minutesField.textContent = minutes;
       secondsField.textContent = seconds;
 
-      if (countedTime >= 0) {
+      if (countedTime = null) {
         clearInterval();
       }
     }, 1000);
